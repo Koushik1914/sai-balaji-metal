@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-dark: #1f1f1f;
+    --color-mid: #5c6770;
+    --color-accent: #d97706;
+    --color-border: #e2e4e6;
+    --brands-strip: #f1f3f5;
+    --background: #f8f9fa;
+    --foreground: #1f1f1f;
+    --card: #ffffff;
+    --card-foreground: #1f1f1f;
+    --muted-foreground: #5c6770;
+    --border: #e2e4e6;
+    --ring: #d97706;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-[#E2E4E6];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#F8F9FA] text-[#1F1F1F] antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+ .steel-hero-bg {
+  background-image:
+    linear-gradient(
+      rgba(15, 15, 15, 0.72),
+      rgba(15, 15, 15, 0.72)
+    ),
+    url("/images/hero/sai-balaji-metal-hero-workshop.webp");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+  .steel-placeholder {
+    background: linear-gradient(135deg, #3d4349 0%, #6b737c 40%, #2f343a 100%);
+  }
+
+  @keyframes chevron-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  .animate-chevron-bounce {
+    animation: chevron-bounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes wa-pulse-ring {
+    0% {
+      transform: scale(0.92);
+      opacity: 0.55;
+    }
+    70% {
+      transform: scale(1.35);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-wa-pulse-ring {
+    animation: wa-pulse-ring 2s ease-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-chevron-bounce,
+  .animate-wa-pulse-ring {
+    animation: none !important;
+  }
+}
