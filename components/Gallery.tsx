@@ -35,7 +35,7 @@ export function Gallery() {
               <div className="absolute inset-0">
                 <Image
                   src={item.image}
-                  alt={item.imageAlt}
+                  alt={item.label}
                   fill
                   sizes="(max-width: 640px) 100vw,
                          (max-width: 1024px) 50vw,
